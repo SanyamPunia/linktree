@@ -130,7 +130,7 @@ export default async function HomePage() {
       className={`flex flex-col items-center justify-center mx-auto w-full mt-16 px-8 ${manrop.className}`}
     >
       <Image
-        className="rounded-full"
+        className="rounded-full select-none"
         alt={data.name}
         src={data.avatar}
         width={96}
