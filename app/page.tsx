@@ -5,7 +5,8 @@ import { redirect } from "next/navigation";
 import { GitHubIcon } from "../components/icons/GitHubIcon";
 import { TwitterIcon } from "../components/icons/TwitterIcon";
 import LinkCard from "../components/LinkCard";
-import { Data } from "../types";
+import { Data } from "../utils/types";
+import Link from "next/link";
 
 const manrop = Manrope();
 
@@ -47,10 +48,28 @@ export default async function HomePage() {
       <div className="flex items-center gap-4 mt-8">
         {data.socials.map((social) => {
           if (social.href.includes("twitter")) {
-            return <TwitterIcon key={social.href} />;
+            return (
+              <Link
+                target="_blank"
+                rel="noreferrer"
+                key={social.href}
+                href={social.href}
+              >
+                <TwitterIcon />
+              </Link>
+            );
           }
           if (social.href.includes("github")) {
-            return <GitHubIcon key={social.href} />;
+            return (
+              <Link
+                target="_blank"
+                rel="noreferrer"
+                key={social.href}
+                href={social.href}
+              >
+                <GitHubIcon key={social.href} />
+              </Link>
+            );
           }
         })}
       </div>
