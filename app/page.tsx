@@ -55,7 +55,7 @@ export default async function HomePage() {
                 key={social.href}
                 href={social.href}
               >
-                <TwitterIcon />
+                <TwitterIcon key={social.href} />
               </Link>
             );
           }
